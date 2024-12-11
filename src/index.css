@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+    background: no-repeat cover;
+    shape-margin: 0.75rem;
+  }
+
+  .slap-container {
+    --rotateX: -40deg;
+    --rotateY: 78deg;
+    --rotateZ: 20deg;
+
+    transform-style: preserve-3d;
+    transform: translate(-50%, -50%) perspective(100000px) rotateY(330deg)
+      rotateX(47deg) rotateZ(0deg) scale3d(1, 1, 1);
+    zoom: 1.5;
+  }
+
+  .vignette {
+    transform-style: preserve-3d;
+    /* transform: translate(-50%, -50%) perspective(10000px) rotateY(330deg)
+      rotateX(47deg) rotateZ(0deg) scale3d(1, 1, 1); */
+
+    background: radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0) 50%,
+      rgba(255, 255, 255, 1) 100%
+    );
+
+    @apply w-full h-full absolute z-50 top-1/2 left-1/2  pointer-events-none -translate-x-1/2 -translate-y-1/2;
+  }
+
+  .slap {
+    background-color: var(--hover-color);
+    @apply transform ease-in-out ring-1 ring-black aspect-square bg-neutral-50 transition-transform duration-150;
+  }
+
+  .slap.hover-slap {
+    transform: translateZ(50px);
+    background-color: var(--hover-color);
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+  }
+}
