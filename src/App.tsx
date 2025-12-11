@@ -43,6 +43,7 @@ const App = () => {
     for (let i = 0; i < rows; i++) {
       map.push(grid.slice(i * cols, i * cols + cols));
     }
+    console.log(map);
     return map;
   }, []);
 
