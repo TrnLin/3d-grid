@@ -2,7 +2,7 @@ import React from "react";
 
 const App = () => {
   const grid = React.useMemo(
-    () => Array.from({ length: 800 }, (_, i) => i + 1),
+    () => Array.from({ length: 1500 }, (_, i) => i + 1),
     []
   );
 
