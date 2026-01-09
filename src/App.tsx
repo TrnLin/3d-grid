@@ -44,6 +44,7 @@ const App = () => {
       map.push(grid.slice(i * cols, i * cols + cols));
     }
     console.log(map);
+    console.log(rows)
     return map;
   }, []);
 
